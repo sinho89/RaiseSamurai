@@ -1,13 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UIManager
 {
-    int _sortValue = 100;
+    private int _sortValue = 100;
+    private Stack<UI_Popup> _popupStack = new Stack<UI_Popup>();
 
-    Stack<UI_Popup> _popupStack = new Stack<UI_Popup>();
-
+    public bool _isOverlapByBackGroundMoveCheck = true;
+    public List<MoveBackground> BackGroundLayers { get; private set; } = new List<MoveBackground>();
     public UI_Scene SceneUI { get; private set; }
     public GameObject Root
     {
@@ -37,20 +39,15 @@ public class UIManager
         }
     }
 
-    public T MakeWorldSpaceUI<T>(Transform parent = null, string name = null) where T : UI_Base
+    public void BackGroundLayersMoveSwitch(bool flag)
     {
-        if(string.IsNullOrEmpty(name))
-            name = typeof(T).Name;
+        if (_isOverlapByBackGroundMoveCheck == flag)
+            return;
 
-        GameObject go = Managers.Resource.Instantiate($"UI/World/{name}");
-        if (parent != null)
-            go.transform.SetParent(parent);
+        foreach (MoveBackground layer in BackGroundLayers)
+            layer._isMoving = flag;
 
-        Canvas canvas = go.GetOrAddComponent<Canvas>();
-        canvas.renderMode = RenderMode.WorldSpace;
-        canvas.worldCamera = Camera.main;
-
-        return Utils.GetOrAddComponent<T>(go);
+        _isOverlapByBackGroundMoveCheck = flag;
     }
 
     public T MakeSubItem<T>(Transform parent = null, string name = null) where T : UI_Base
@@ -70,7 +67,7 @@ public class UIManager
         return Utils.GetOrAddComponent<T>(go);
     }
 
-    public T ShowSceneUI<T>(string name = null) where T : UI_Scene
+    public T ShowSceneUI<T>(string name = null, Transform parent = null) where T : UI_Scene
     {
         if(string.IsNullOrEmpty(name))
             name = typeof(T).Name;
@@ -80,7 +77,10 @@ public class UIManager
         T sceneUI = Utils.GetOrAddComponent<T>(go);
         SceneUI = sceneUI;
 
-        go.transform.SetParent(Root.transform);
+        if (parent != null)
+            go.transform.SetParent(parent);
+        else
+            go.transform.SetParent(Root.transform);
 
         return sceneUI;
     }
@@ -108,7 +108,6 @@ public class UIManager
 
         return popup;
     }
-
     public void ClosePopupUI(UI_Popup popup)
     {
         if (_popupStack.Count == 0)

@@ -1,11 +1,21 @@
 using System;
+using System.Linq;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Pool;
 
 public class Utils
 {
+    public static TKey GetDictionayFindKeyByValue<TKey,TValue>(Dictionary<TKey,TValue> dictionary, TValue value)
+    {
+        return dictionary.FirstOrDefault(entry =>
+            EqualityComparer<TValue>.Default.Equals(entry.Value, value)).Key;
+    }
+    public static Defines.ActorStates GetRandAttackType(int MaxRange)
+    {
+        return (Defines.ActorStates)(UnityEngine.Random.Range(0,MaxRange) + 1);
+    }
+
     public static T GetOrAddComponent<T>(GameObject go) where T : UnityEngine.Component
     {
         T component = go.GetComponent<T>();

@@ -39,6 +39,7 @@ public abstract class UI_Base : MonoBehaviour
     protected void BindImage(Type type) { Bind<Image>(type); }
     protected void BindText(Type type) { Bind<TextMeshProUGUI>(type); }
     protected void BindButton(Type type) { Bind<Button>(type); }
+    protected void BindSlider(Type type) { Bind<Slider>(type); }
 
     protected T Get<T>(int idx) where T : UnityEngine.Object
     {
@@ -51,9 +52,10 @@ public abstract class UI_Base : MonoBehaviour
     }
 
     protected GameObject GetObject(int idx) { return Get<GameObject>(idx);  }
-    protected Text GetText(int idx) { return Get<Text>(idx); }
+    protected TextMeshProUGUI GetText(int idx) { return Get<TextMeshProUGUI>(idx); }
     protected Button GetButton(int idx) { return Get<Button>(idx); }
     protected Image GetImage(int idx) { return Get<Image>(idx); }
+    protected Slider GetSlider(int idx) { return Get<Slider>(idx); }
 
     public static void BindEvent(GameObject go, Action<PointerEventData> action, Defines.UIEvents type = Defines.UIEvents.Click)
     {

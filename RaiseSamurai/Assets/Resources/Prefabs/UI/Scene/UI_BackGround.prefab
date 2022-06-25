@@ -9,10 +9,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6568736840477649831}
-  - component: {fileID: 4680701288630661839}
+  - component: {fileID: -7850738473723978474}
   m_Layer: 3
   m_Name: UI_BackGround
-  m_TagString: Untagged
+  m_TagString: UIScene
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -42,7 +42,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4680701288630661839
+--- !u!114 &-7850738473723978474
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -51,7 +51,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 146824749083502009}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fb6827ee089e0b84aad1e8a6f92fc7eb, type: 3}
+  m_Script: {fileID: 11500000, guid: 543765c6a3713da40a1991b0e705aee6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &175242756478546252
@@ -66,8 +66,8 @@ GameObject:
   - component: {fileID: 8543110177089958333}
   - component: {fileID: 1348512115159574402}
   m_Layer: 3
-  m_Name: Layer_0004_Lights (1)
-  m_TagString: Untagged
+  m_Name: Layer_04_2
+  m_TagString: UIScene
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -154,6 +154,7 @@ MonoBehaviour:
   speed: -0.8
   PontoDeDestino: -8.56
   PontoOriginal: 9
+  _isMoving: 1
 --- !u!1 &289685103128796573
 GameObject:
   m_ObjectHideFlags: 0
@@ -165,8 +166,8 @@ GameObject:
   - component: {fileID: 2702803571384013691}
   - component: {fileID: 2265499220378699727}
   m_Layer: 3
-  m_Name: Layer_0009_2 (1)
-  m_TagString: Untagged
+  m_Name: Layer_09_1
+  m_TagString: UIScene
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -250,8 +251,8 @@ GameObject:
   - component: {fileID: 2396238988412313377}
   - component: {fileID: 5444357550394933754}
   m_Layer: 3
-  m_Name: Layer_0002_7 (1)
-  m_TagString: Untagged
+  m_Name: Layer_02_2
+  m_TagString: UIScene
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -338,6 +339,7 @@ MonoBehaviour:
   speed: -1
   PontoDeDestino: -8.56
   PontoOriginal: 9
+  _isMoving: 1
 --- !u!1 &1274793771771497738
 GameObject:
   m_ObjectHideFlags: 0
@@ -350,8 +352,8 @@ GameObject:
   - component: {fileID: 8027198828994374773}
   - component: {fileID: 7619306564533013102}
   m_Layer: 3
-  m_Name: Layer_0008_3
-  m_TagString: Untagged
+  m_Name: Layer_08_1
+  m_TagString: UIScene
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -438,6 +440,7 @@ MonoBehaviour:
   speed: -0.2
   PontoDeDestino: -8.56
   PontoOriginal: 9.5
+  _isMoving: 1
 --- !u!1 &1539550020115560907
 GameObject:
   m_ObjectHideFlags: 0
@@ -549,8 +552,8 @@ GameObject:
   - component: {fileID: 585938698902988693}
   - component: {fileID: 2330212071803406870}
   m_Layer: 3
-  m_Name: Layer_0004_Lights
-  m_TagString: Untagged
+  m_Name: Layer_04_1
+  m_TagString: UIScene
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -637,6 +640,7 @@ MonoBehaviour:
   speed: -0.8
   PontoDeDestino: -8.56
   PontoOriginal: 9
+  _isMoving: 1
 --- !u!1 &3093760146737764072
 GameObject:
   m_ObjectHideFlags: 0
@@ -649,8 +653,8 @@ GameObject:
   - component: {fileID: 6301299550008597854}
   - component: {fileID: 8296798670076190279}
   m_Layer: 3
-  m_Name: Layer_0001_8 (1)
-  m_TagString: Untagged
+  m_Name: Layer_01_2
+  m_TagString: UIScene
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -737,6 +741,7 @@ MonoBehaviour:
   speed: -1.1
   PontoDeDestino: -8.56
   PontoOriginal: 9
+  _isMoving: 1
 --- !u!1 &3471788976967843663
 GameObject:
   m_ObjectHideFlags: 0
@@ -782,8 +787,8 @@ GameObject:
   - component: {fileID: 4947658404957798796}
   - component: {fileID: 1270764173103258673}
   m_Layer: 3
-  m_Name: Layer_0008_3 (1)
-  m_TagString: Untagged
+  m_Name: Layer_08_2
+  m_TagString: UIScene
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -870,6 +875,7 @@ MonoBehaviour:
   speed: -0.2
   PontoDeDestino: -8.56
   PontoOriginal: 9.5
+  _isMoving: 1
 --- !u!1 &4844204353517984860
 GameObject:
   m_ObjectHideFlags: 0
@@ -882,8 +888,8 @@ GameObject:
   - component: {fileID: 3741588980362056839}
   - component: {fileID: 4835392663949597100}
   m_Layer: 3
-  m_Name: Layer_0002_7
-  m_TagString: Untagged
+  m_Name: Layer_02_1
+  m_TagString: UIScene
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -970,6 +976,7 @@ MonoBehaviour:
   speed: -1
   PontoDeDestino: -8.56
   PontoOriginal: 9
+  _isMoving: 1
 --- !u!1 &5341464587548726143
 GameObject:
   m_ObjectHideFlags: 0
@@ -982,8 +989,8 @@ GameObject:
   - component: {fileID: 2150845115844562579}
   - component: {fileID: 3228085362144074974}
   m_Layer: 3
-  m_Name: Layer_0000_9 (1)
-  m_TagString: Untagged
+  m_Name: Layer_00_2
+  m_TagString: UIScene
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1070,6 +1077,7 @@ MonoBehaviour:
   speed: -1.2
   PontoDeDestino: -8.56
   PontoOriginal: 9
+  _isMoving: 1
 --- !u!1 &5625330153368741402
 GameObject:
   m_ObjectHideFlags: 0
@@ -1082,8 +1090,8 @@ GameObject:
   - component: {fileID: 191990692164163197}
   - component: {fileID: 2378006521308187072}
   m_Layer: 3
-  m_Name: Layer_0001_8
-  m_TagString: Untagged
+  m_Name: Layer_01_1
+  m_TagString: UIScene
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1170,6 +1178,7 @@ MonoBehaviour:
   speed: -1.1
   PontoDeDestino: -8.56
   PontoOriginal: 9
+  _isMoving: 1
 --- !u!1 &6040966524490389723
 GameObject:
   m_ObjectHideFlags: 0
@@ -1214,7 +1223,7 @@ GameObject:
   - component: {fileID: 4213722142735758652}
   m_Layer: 3
   m_Name: LAYER00
-  m_TagString: Untagged
+  m_TagString: UIScene
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1281,8 +1290,8 @@ GameObject:
   - component: {fileID: 398325174078347090}
   - component: {fileID: 994355602276520623}
   m_Layer: 3
-  m_Name: Layer_0005_5
-  m_TagString: Untagged
+  m_Name: Layer_05_1
+  m_TagString: UIScene
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1369,6 +1378,7 @@ MonoBehaviour:
   speed: -0.7
   PontoDeDestino: -8.56
   PontoOriginal: 9.5
+  _isMoving: 1
 --- !u!1 &6400937958654503616
 GameObject:
   m_ObjectHideFlags: 0
@@ -1414,8 +1424,8 @@ GameObject:
   - component: {fileID: 1804662494728511581}
   - component: {fileID: 1818123030255889487}
   m_Layer: 3
-  m_Name: Layer_0005_5 (1)
-  m_TagString: Untagged
+  m_Name: Layer_05_2
+  m_TagString: UIScene
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1502,6 +1512,7 @@ MonoBehaviour:
   speed: -0.7
   PontoDeDestino: -8.56
   PontoOriginal: 9.5
+  _isMoving: 1
 --- !u!1 &6626684459429522669
 GameObject:
   m_ObjectHideFlags: 0
@@ -1514,8 +1525,8 @@ GameObject:
   - component: {fileID: 7437467850113039125}
   - component: {fileID: 8821789882747058510}
   m_Layer: 3
-  m_Name: Layer_0000_9
-  m_TagString: Untagged
+  m_Name: Layer_00_1
+  m_TagString: UIScene
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1602,6 +1613,7 @@ MonoBehaviour:
   speed: -1.2
   PontoDeDestino: -8.56
   PontoOriginal: 9
+  _isMoving: 1
 --- !u!1 &6653802184880539308
 GameObject:
   m_ObjectHideFlags: 0
@@ -1647,8 +1659,8 @@ GameObject:
   - component: {fileID: 523144720844935840}
   - component: {fileID: 8808732038479681362}
   m_Layer: 3
-  m_Name: Layer_0003_6 (1)
-  m_TagString: Untagged
+  m_Name: Layer_03_2
+  m_TagString: UIScene
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1735,6 +1747,7 @@ MonoBehaviour:
   speed: -0.9
   PontoDeDestino: -8.56
   PontoOriginal: 9
+  _isMoving: 1
 --- !u!1 &7378631711574865727
 GameObject:
   m_ObjectHideFlags: 0
@@ -1746,8 +1759,8 @@ GameObject:
   - component: {fileID: 1319767273951954007}
   - component: {fileID: 717497709014531475}
   m_Layer: 3
-  m_Name: Layer_0009_2 (2)
-  m_TagString: Untagged
+  m_Name: Layer_09_2
+  m_TagString: UIScene
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1831,8 +1844,8 @@ GameObject:
   - component: {fileID: 2113251858578168274}
   - component: {fileID: 3370225126083473038}
   m_Layer: 3
-  m_Name: Layer_0003_6
-  m_TagString: Untagged
+  m_Name: Layer_03_1
+  m_TagString: UIScene
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1919,6 +1932,7 @@ MonoBehaviour:
   speed: -0.9
   PontoDeDestino: -8.56
   PontoOriginal: 9
+  _isMoving: 1
 --- !u!1 &8091612292531454281
 GameObject:
   m_ObjectHideFlags: 0
@@ -1931,8 +1945,8 @@ GameObject:
   - component: {fileID: 7436115768058919298}
   - component: {fileID: 7793576199971481281}
   m_Layer: 3
-  m_Name: Layer_0006_4
-  m_TagString: Untagged
+  m_Name: Layer_06_1
+  m_TagString: UIScene
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2019,6 +2033,7 @@ MonoBehaviour:
   speed: -0.5
   PontoDeDestino: -8.56
   PontoOriginal: 9.5
+  _isMoving: 1
 --- !u!1 &8395719278969959974
 GameObject:
   m_ObjectHideFlags: 0
@@ -2064,8 +2079,8 @@ GameObject:
   - component: {fileID: 4795639660098105229}
   - component: {fileID: 5278568786925733102}
   m_Layer: 3
-  m_Name: Layer_0006_4 (1)
-  m_TagString: Untagged
+  m_Name: Layer_06_2
+  m_TagString: UIScene
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2152,6 +2167,7 @@ MonoBehaviour:
   speed: -0.5
   PontoDeDestino: -8.56
   PontoOriginal: 9.5
+  _isMoving: 1
 --- !u!1 &8839639640746673290
 GameObject:
   m_ObjectHideFlags: 0
@@ -2164,8 +2180,8 @@ GameObject:
   - component: {fileID: 213133929234087533}
   - component: {fileID: 957677977846161993}
   m_Layer: 3
-  m_Name: Layer_0007_Lights (1)
-  m_TagString: Untagged
+  m_Name: Layer_07_2
+  m_TagString: UIScene
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2252,6 +2268,7 @@ MonoBehaviour:
   speed: -0.35
   PontoDeDestino: -8.56
   PontoOriginal: 9.5
+  _isMoving: 1
 --- !u!1 &9025648936680327506
 GameObject:
   m_ObjectHideFlags: 0
@@ -2264,8 +2281,8 @@ GameObject:
   - component: {fileID: 7729210209672483743}
   - component: {fileID: 8592588843340062996}
   m_Layer: 3
-  m_Name: Layer_0007_Lights
-  m_TagString: Untagged
+  m_Name: Layer_07_1
+  m_TagString: UIScene
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2352,3 +2369,4 @@ MonoBehaviour:
   speed: -0.35
   PontoDeDestino: -8.56
   PontoOriginal: 9.5
+  _isMoving: 1

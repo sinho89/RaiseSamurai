@@ -3,7 +3,10 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Monster
+  - UIScene
+  - UIPopUp
   layers:
   - Default
   - TransparentFX
@@ -40,4 +43,19 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: BackGround
+    uniqueID: 2722088725
+    locked: 0
+  - name: Player
+    uniqueID: 2229255319
+    locked: 0
+  - name: Monster
+    uniqueID: 751118703
+    locked: 0
+  - name: SceneUI
+    uniqueID: 974107525
+    locked: 0
+  - name: PopUI
+    uniqueID: 3626512827
     locked: 0

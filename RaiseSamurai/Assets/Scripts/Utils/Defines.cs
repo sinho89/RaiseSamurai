@@ -20,12 +20,10 @@ public class Defines
 
     public enum ActorStates
     {
-        Idle = 0,
-        Move,
-        Attack,
-        Casting,
-        Hit,
-        Die,
+        Move = 0,
+        Attack1,
+        Attack2,
+        Death,
     }
 
     public enum ObjectTypes
@@ -36,6 +34,15 @@ public class Defines
         UIs,
         Effects,
         Systems,
+    }
+
+    public enum ComponentType
+    {
+        Unknown,
+        Button,
+        Image,
+        Sprite,
+        Text,
     }
 
     public enum ResourcsGroupType

@@ -34,6 +34,7 @@ public class Managers : MonoBehaviour
 
     private void Update()
     {
+
     }
 
     private static void Init()

@@ -11,7 +11,7 @@ public interface ILoader<Key, Value>
 }
 public class DataManager
 {
-    /*public Dictionary<int, Data.Stat> StatDict { get; private set; } = new Dictionary<int, Data.Stat>();
+    public Dictionary<int, Data.Stat> StatDict { get; private set; } = new Dictionary<int, Data.Stat>();
 
     public void Init()
     {
@@ -26,5 +26,5 @@ public class DataManager
     public void Clear()
     {
 
-    }*/
+    }
 }
