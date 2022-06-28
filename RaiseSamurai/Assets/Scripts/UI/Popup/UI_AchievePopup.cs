@@ -8,7 +8,7 @@ public class UI_AchievePopup : UI_Popup
     {
         CloseButton,
     }
-    public override void Init()
+    protected override void Init()
     {
         Canvas canvas = gameObject.GetOrAddComponent<Canvas>();
         canvas.renderMode = RenderMode.ScreenSpaceCamera;

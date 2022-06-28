@@ -8,8 +8,11 @@ public class Utils
 {
     public static TKey GetDictionayFindKeyByValue<TKey,TValue>(Dictionary<TKey,TValue> dictionary, TValue value)
     {
-        return dictionary.FirstOrDefault(entry =>
-            EqualityComparer<TValue>.Default.Equals(entry.Value, value)).Key;
+        /*return dictionary.FirstOrDefault(entry =>
+            EqualityComparer<TValue>.Default.Equals(entry.Value, value)).Key;*/
+        Dictionary<TValue, TKey> revDict = dictionary.ToDictionary(pair => pair.Value, pair => pair.Key);
+        return revDict[value];
+
     }
     public static Defines.ActorStates GetRandAttackType(int MaxRange)
     {

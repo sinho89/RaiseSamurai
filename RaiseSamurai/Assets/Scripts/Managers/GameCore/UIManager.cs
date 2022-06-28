@@ -49,6 +49,21 @@ public class UIManager
 
         _isOverlapByBackGroundMoveCheck = flag;
     }
+    public T MakeWorldUI<T>(Transform parent = null, string name = null) where T : UI_Base
+    {
+        if (string.IsNullOrEmpty(name))
+            name = typeof(T).Name;
+
+        GameObject go = Managers.Resource.Instantiate($"UI/World/{name}");
+        if (parent != null)
+            go.transform.SetParent(parent);
+
+        Canvas canvas = go.GetOrAddComponent<Canvas>();
+        canvas.renderMode = RenderMode.WorldSpace;
+        canvas.worldCamera = Camera.main;
+
+        return Utils.GetOrAddComponent<T>(go);
+    }
 
     public T MakeSubItem<T>(Transform parent = null, string name = null) where T : UI_Base
     {
@@ -71,7 +86,6 @@ public class UIManager
     {
         if(string.IsNullOrEmpty(name))
             name = typeof(T).Name;
-
 
         GameObject go = Managers.Resource.Instantiate($"UI/Scene/{name}");
         T sceneUI = Utils.GetOrAddComponent<T>(go);
@@ -108,6 +122,7 @@ public class UIManager
 
         return popup;
     }
+
     public void ClosePopupUI(UI_Popup popup)
     {
         if (_popupStack.Count == 0)

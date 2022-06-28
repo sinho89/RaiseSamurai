@@ -17,9 +17,15 @@ public class ActorManager
 
 
     public Action<int> OnSpawnEvent;
+    public int _playerKillCount = 0;
+    public bool _isGameOver = false;
 
     public GameObject GetPlayer() { return _player; }
     public SpawningPool SpawningPool { get; set; }
+
+    public int GetFieldMonsterCount() { return _monsters.Count(); }
+    public int GetMaxMonsterCount() { return SpawningPool.GetMaxMonsterCount(); }
+
     public Defines.Actors GetActorsType(GameObject go)
     {
         BaseActor ac = go.GetComponent<BaseActor>();
@@ -34,7 +40,7 @@ public class ActorManager
         DynamicActor ac = go.GetComponent<DynamicActor>();
         if (ac == null)
             return -1;
-        return ac.Hp / ac.MaxHp;
+        return (float)ac.Hp / (float)ac.MaxHp;
     }
 
     public float GetMpValue(GameObject go)
@@ -42,7 +48,7 @@ public class ActorManager
         DynamicActor ac = go.GetComponent<DynamicActor>();
         if (ac == null)
             return -1;
-        return ac.Mp / ac.MaxMp;
+        return (float)ac.Mp / (float)ac.MaxMp;
     }
 
     public float GetExpValue(GameObject go)
@@ -90,13 +96,14 @@ public class ActorManager
                 if(daMonster.Hp > 0)
                 {
                     daMonster.Hit(attack);
-                    //break;
+                    break;
                 }
             }
         }
         else if(type == Defines.Actors.Monster)
         {
-            //_player.GetOrAddComponent<DynamicActor>().Hit(attack);
+            _player.GetOrAddComponent<DynamicActor>().Hit(attack);
+
         }
     }
 
@@ -105,18 +112,17 @@ public class ActorManager
         if (!IsMonsterAliveCheck(go))
             return;
 
-        long dicKey = Utils.GetDictionayFindKeyByValue(_monsters, go);
-        _targetMonsters.Add(dicKey, go);
-        Debug.Log(dicKey);
+        _targetMonsters.Add(go.GetComponent<MonsterController>()._uniqueID, go);
     }
     public void OutTargetDictionary(GameObject go)
     {
-        long dicKey = Utils.GetDictionayFindKeyByValue(_targetMonsters, go);
         foreach (var item in _targetMonsters.ToList()) // ToList()
         {
-            if (item.Key == dicKey)
+            if (item.Key == go.GetComponent<MonsterController>()._uniqueID)
             {
                 _targetMonsters.Remove(item.Key);
+                ++_playerKillCount;
+                _playerBehavior.Exp += 50;
                 break;
             }
         }
@@ -137,6 +143,7 @@ public class ActorManager
                 {
                     _monsterID++;
                     _monsters.Add(_monsterID, go);
+                    go.GetComponent<MonsterController>()._uniqueID = _monsterID;
                     if(OnSpawnEvent != null)
                         OnSpawnEvent.Invoke(1);
                 }
@@ -174,6 +181,14 @@ public class ActorManager
     }
     public void Clear()
     {
+        _targetMonsters.Clear();
 
+        foreach (var m in _monsters.ToList()) // ToList()
+        {
+            _monsters.Remove(m.Key);
+            Managers.Resource.Destroy(m.Value);
+        }
+
+        _monsterID = 0;
     }
 }

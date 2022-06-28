@@ -16,6 +16,7 @@ public class TitleScene : BaseScene
     {
         SceneType = Defines.Scenes.Title;
         SceneName = "Title";
+        Managers.Sound.Play("BGM/TitleBgm", Defines.Sounds.Bgm);
     }
     protected override void ObjectInit()
     {

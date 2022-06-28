@@ -18,7 +18,7 @@ public class UI_BackGround : UI_Scene
         LAYER09, Layer_09_1, Layer_09_2,
     }
 
-    public override void Init()
+    protected override void Init()
     {
         BindObject(typeof(Layers));
 

@@ -10,7 +10,7 @@ public class UI_ExitPopup : UI_Popup
         OkButton,
         CancleButton,
     }
-    public override void Init()
+    protected override void Init()
     {
         Canvas canvas = gameObject.GetOrAddComponent<Canvas>();
         canvas.renderMode = RenderMode.ScreenSpaceCamera;

@@ -21,7 +21,10 @@ public class SpawningPool : MonoBehaviour
     {
         return _monsterCount;
     }
-
+    public int GetMaxMonsterCount()
+    {
+        return _maxMonsterCount;
+    }
     void Start()
     {
         Managers.Actor.OnSpawnEvent -= AddMonsterCount;
@@ -34,6 +37,8 @@ public class SpawningPool : MonoBehaviour
     {
         while (_monsterCount < _maxMonsterCount)
         {
+            if (Managers.Actor._isGameOver)
+                break;
             yield return new WaitForSeconds(_spawnTime);
             GameObject obj = Managers.Actor.Spawn(Defines.Actors.Monster, "Monster/FlyingEye/FlyingEye");
             obj.transform.position = new Vector3(5.0f, 0.15f, 0.0f);

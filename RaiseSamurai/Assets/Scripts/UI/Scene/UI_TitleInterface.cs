@@ -13,7 +13,7 @@ public class UI_TitleInterface : UI_Scene
         ExitButton,
     }
 
-    public override void Init()
+    protected override void Init()
     {
         Canvas canvas = gameObject.GetOrAddComponent<Canvas>();
         canvas.renderMode = RenderMode.ScreenSpaceCamera;
@@ -24,7 +24,7 @@ public class UI_TitleInterface : UI_Scene
         GetButton((int)TitleButtons.StartButton).gameObject.BindEvent((PointerEventData) => 
         { 
             Managers.Scene._MovingScene = Defines.Scenes.Game;
-            Managers.Scene._IsSceneChange = true; 
+            Managers.Scene._isSceneChange = true; 
         });
         GetButton((int)TitleButtons.AchievementsButton).gameObject.BindEvent((PointerEventData) => { Managers.UI.ShowPopupUI<UI_AchievePopup>("UI_AchievePopup"); });
         GetButton((int)TitleButtons.ShopButton).gameObject.BindEvent((PointerEventData) => { Managers.UI.ShowPopupUI<UI_ShopPopup>("UI_ShopPopup"); });

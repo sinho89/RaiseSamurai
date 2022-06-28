@@ -9,7 +9,7 @@ public class SceneManagerEx
     public BaseScene CurrentScene { get { return GameObject.FindObjectOfType<BaseScene>(); } }
     public Defines.Scenes _MovingScene = Defines.Scenes.Unknown;
     public Image _screenFaderImg = null;
-    public bool _IsSceneChange = false;
+    public bool _isSceneChange = false;
 
     public void LoadScene(Defines.Scenes type)
     {

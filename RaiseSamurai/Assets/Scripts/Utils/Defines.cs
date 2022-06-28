@@ -16,6 +16,7 @@ public class Defines
         Unknown,
         Player,
         Monster,
+        Effect,
     }
 
     public enum ActorStates

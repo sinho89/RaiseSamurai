@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class UI_Scene : UI_Base
 {
-    public override void Init()
+    protected override void Init()
     {
     }
 }

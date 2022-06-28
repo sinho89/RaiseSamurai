@@ -7,11 +7,11 @@ public class DynamicActor : BaseActor
     public Defines.ActorStates ActorStateType { get; protected set; } = Defines.ActorStates.Move;
     public Animator Actoranim { get; protected set; }
 
+    protected WorldHPBar _hpBar = null;
     protected int _attackType = 0;
     protected bool _isMove = true;
     protected bool _isAttack = false;
     protected bool _isDeath = false;
-    protected bool _isDyingComplete = false;
 
     public float MoveSpeed { get; protected set; } = 1.0f;
     public int MaxHp { get; protected set; } = 100;
@@ -21,9 +21,39 @@ public class DynamicActor : BaseActor
     public int Attack { get; protected set; } = 10;
     public float AttackSpeed { get; protected set; } = 1.0f;
     public int Level { get; protected set; } = 1;
-    public int MaxExp { get; protected set; } = 10;
-    public int Exp { get; protected set; } = 0;
-    
+
+    public int MaxExp { get; protected set; } = 100;
+    public int Lucky { get; protected set; } = 5;
+    public int Exp
+    {
+        get { return _exp; }
+        set
+        {
+            _exp = value;
+
+            int level = Level;
+            while (true)
+            {
+                if (_exp < MaxExp)
+                    break;
+                level++;
+                _exp -= MaxExp;
+            }
+
+            if (level != Level)
+            {
+                Debug.Log("Level Up!");
+                Managers.Actor.Spawn(Defines.Actors.Effect, "Effect/LevelUp/LevelUpEffect", transform);
+                Level = level;
+                Hp = MaxHp;
+                Attack += 10;
+                AttackSpeed += 0.1f;
+            }
+        }
+    }
+
+    protected int _exp = 0;
+
 
     public virtual void OnEnable()
     {
@@ -35,7 +65,10 @@ public class DynamicActor : BaseActor
     public virtual void Hit(int attack)
     {
         if(Hp > 0)
+        {
             Hp -= attack;
+            Managers.UI.MakeWorldUI<WorldDmg>(this.gameObject.transform, "WorldDmg").Damage = attack;
+        }
     }
 
     protected override void Init()
@@ -48,6 +81,7 @@ public class DynamicActor : BaseActor
     {
         base.Update();
         AnimStateUpdate();
+        HpBarCheck();
     }
     protected virtual void AnimStateUpdate()
     {   
@@ -91,6 +125,10 @@ public class DynamicActor : BaseActor
         Actoranim.SetBool("IsAttack", _isAttack);
         Actoranim.SetBool("IsDeath", _isDeath);
         Actoranim.SetInteger("AttackType", _attackType);
+    }
+
+    protected virtual void HpBarCheck()
+    {
     }
 
     protected virtual void OnAttack()

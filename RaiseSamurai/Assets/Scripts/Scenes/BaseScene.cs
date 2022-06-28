@@ -29,7 +29,7 @@ public abstract class BaseScene : MonoBehaviour
         else
             Managers.Scene._screenFaderImg = Utils.FindChild<Image>((GameObject)obj, "FadePanel", true);
 
-        Managers.Scene._screenFaderImg.raycastTarget = true;
+        Managers.Scene._screenFaderImg.raycastTarget = false;
         Managers.Scene._screenFaderImg.color = new Color(0, 0, 0, 1);
 
         StartCoroutine(SceneForFadeIn());
@@ -37,16 +37,16 @@ public abstract class BaseScene : MonoBehaviour
 
     protected virtual void Update()
     {
-        if(Managers.Scene._IsSceneChange)
+        if(Managers.Scene._isSceneChange)
         {
             if(Managers.Scene._MovingScene == Defines.Scenes.Unknown)
             {
-                Managers.Scene._IsSceneChange = false;
+                Managers.Scene._isSceneChange = false;
                 return;
             }
 
             StartCoroutine(SceneForFadeOut(Managers.Scene._MovingScene));
-            Managers.Scene._IsSceneChange = false;
+            Managers.Scene._isSceneChange = false;
         }
     }
 
