@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MoveBackground : MonoBehaviour 
+public class MoveBackground : BackGround 
 {
 	public float speed;
 	private float x;
@@ -10,17 +10,16 @@ public class MoveBackground : MonoBehaviour
 	public float PontoOriginal;
 	public bool _isMoving = true;
 
-	// Use this for initialization
-	void Start () 
+	protected override void Init()
 	{
-		//PontoOriginal = transform.position.x;
+		base.Init();
 	}
-	
-	// Update is called once per frame
-	void Update () 
+	protected override void Update()
 	{
-		if(_isMoving == true)
-        {
+		base.Update();
+
+		if (_isMoving == true)
+		{
 			x = transform.position.x;
 			x += speed * Time.deltaTime;
 			transform.position = new Vector3(x, transform.position.y, transform.position.z);
@@ -31,5 +30,10 @@ public class MoveBackground : MonoBehaviour
 				transform.position = new Vector3(x, transform.position.y, transform.position.z);
 			}
 		}
+	}
+
+	public override void Clear()
+	{
+
 	}
 }

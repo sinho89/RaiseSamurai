@@ -20,13 +20,18 @@ public class UI_GameGage : UI_Scene
 
     private Slider[] _gagesArray = new Slider[(int)(Gages.MCNT_Bar) +1];
 
-    protected override void Init()
+    public override bool Init()
     {
+        if (base.Init() == false)
+            return false;
+
         BindSlider(typeof(Gages));
         BindText(typeof(GageText));
 
         for(int i = 0; i < (int)(Gages.MCNT_Bar) +1; i++)
             _gagesArray[i] = GetSlider(i);
+
+        return true;
     }
 
     private void Update()

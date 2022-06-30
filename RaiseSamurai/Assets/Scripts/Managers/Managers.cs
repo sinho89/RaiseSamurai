@@ -48,6 +48,7 @@ public class Managers : MonoBehaviour
             s_Instance = Utils.GetOrAddComponent<Managers>(go);
             DontDestroyOnLoad(go);
 
+            s_Instance._data.Init();
             s_Instance._pool.Init();
             s_Instance._sound.Init();
         }
@@ -56,6 +57,7 @@ public class Managers : MonoBehaviour
     public static void Clear()
     { 
         Actor.Clear();
+        Data.Clear();
         Input.Clear();
         Pool.Clear();
         Scene.Clear();

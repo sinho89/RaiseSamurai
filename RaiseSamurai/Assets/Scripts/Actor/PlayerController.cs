@@ -46,7 +46,7 @@ public class PlayerController : DynamicActor
     {
         if (Managers.Actor._isGameOver) return;
         Managers.Actor.InTargetDictionary(collision.gameObject);
-        Managers.UI.BackGroundLayersMoveSwitch(false);
+        Managers.Actor.GetBackGround().MoveBackgroundSwitch(false);
         ActorStateType = Utils.GetRandAttackType(2);
     }
 
@@ -70,7 +70,7 @@ public class PlayerController : DynamicActor
 
     private void OnMoveStart()
     {
-        Managers.UI.BackGroundLayersMoveSwitch(true);
+        Managers.Actor.GetBackGround().MoveBackgroundSwitch(true);
     }
     private void OnAttackStart()
     {
@@ -81,7 +81,7 @@ public class PlayerController : DynamicActor
     {
         if (Managers.Actor.GetTargetListCount() <= 0)
         {
-            Managers.UI.BackGroundLayersMoveSwitch(true);
+            Managers.Actor.GetBackGround().MoveBackgroundSwitch(true);
             ActorStateType = Defines.ActorStates.Move;
         }
 

@@ -3,11 +3,12 @@ using System.Linq;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using Data;
 
 public class ActorManager
 {
     GameObject _player = null;
+    BackGround _backGround = null;
     DynamicActor _playerBehavior = null;
 
     static long _monsterID = 0;
@@ -15,16 +16,31 @@ public class ActorManager
     Dictionary<long, GameObject> _monsters = new Dictionary<long, GameObject>();
     Dictionary<long, GameObject> _targetMonsters = new Dictionary<long, GameObject>();
 
+    private int _playerSkillChoiceCount = 3;
 
     public Action<int> OnSpawnEvent;
     public int _playerKillCount = 0;
     public bool _isGameOver = false;
 
     public GameObject GetPlayer() { return _player; }
+    public BackGround GetBackGround() { return _backGround; }
     public SpawningPool SpawningPool { get; set; }
+
+    public void SetPlayerSkill(Skills skill)
+    {
+        _playerBehavior.SkillSetInfo(skill);
+        Time.timeScale = 1f;
+    }
+
+    public void SetChoiceCount(int Lucky)
+    {
+        int choiceCount = Lucky / 10;
+        _playerSkillChoiceCount += choiceCount;
+    }
 
     public int GetFieldMonsterCount() { return _monsters.Count(); }
     public int GetMaxMonsterCount() { return SpawningPool.GetMaxMonsterCount(); }
+    public int GetPlayerChoiceCount() { return _playerSkillChoiceCount; }
 
     public Defines.Actors GetActorsType(GameObject go)
     {
@@ -96,9 +112,13 @@ public class ActorManager
                 if(daMonster.Hp > 0)
                 {
                     daMonster.Hit(attack);
-                    break;
+                    if(!_playerBehavior.GetSplash())
+                        break;
                 }
             }
+
+            if(_playerBehavior.GetSplash())
+                Managers.UI.MakeWorldUI<TiamatEffect>(_player.transform, "TiamatEffect");
         }
         else if(type == Defines.Actors.Monster)
         {
@@ -122,7 +142,7 @@ public class ActorManager
             {
                 _targetMonsters.Remove(item.Key);
                 ++_playerKillCount;
-                _playerBehavior.Exp += 50;
+                _playerBehavior.Exp += 10;
                 break;
             }
         }
@@ -134,6 +154,9 @@ public class ActorManager
 
         switch (type)
         {
+            case Defines.Actors.BackGround:
+                _backGround = go.GetComponent<BackGround>();
+                break;
             case Defines.Actors.Player:
                 _player = go;
                 _playerBehavior = go.GetComponent<DynamicActor>();
@@ -158,10 +181,18 @@ public class ActorManager
 
         switch (type)
         {
+            case Defines.Actors.BackGround:
+                {
+                    if (_backGround != null)
+                        _backGround = null;
+                }
+                break;
             case Defines.Actors.Player:
                 {
                     if (_player == go)
                         _player = null;
+                    if(_playerBehavior != null)
+                        _playerBehavior = null;
                 }
                 break;
             case Defines.Actors.Monster:

@@ -11,8 +11,11 @@ public class WorldHPBar : UI_Base
         HpGage,
     }
 
-    protected override void Init()
+    public override bool Init()
     {
+        if (base.Init() == false)
+            return false;
+
         BindImage(typeof(Image));
 
         _parentComponent = transform.parent.GetComponent<DynamicActor>();
@@ -25,6 +28,8 @@ public class WorldHPBar : UI_Base
             GetImage((int)Image.HpGage).color = new Color(0.6f, 0.99f, 0.3f, 1f);
         else if(_parentComponent.ActType == Defines.Actors.Monster)
             GetImage((int)Image.HpGage).color = new Color(0.99f, 0.3f, 0.3f, 1f);
+
+        return true;
 
     }
 

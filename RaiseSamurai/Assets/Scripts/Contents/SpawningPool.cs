@@ -30,17 +30,17 @@ public class SpawningPool : MonoBehaviour
         Managers.Actor.OnSpawnEvent -= AddMonsterCount;
         Managers.Actor.OnSpawnEvent += AddMonsterCount;
 
-        StartCoroutine("MonsterSpawn");
+        StartCoroutine(CoMonsterSpawn());
     }
 
-    IEnumerator MonsterSpawn()
+    IEnumerator CoMonsterSpawn()
     {
         while (_monsterCount < _maxMonsterCount)
         {
             if (Managers.Actor._isGameOver)
                 break;
             yield return new WaitForSeconds(_spawnTime);
-            GameObject obj = Managers.Actor.Spawn(Defines.Actors.Monster, "Monster/FlyingEye/FlyingEye");
+            GameObject obj = Managers.Actor.Spawn(Defines.Actors.Monster, "Actor/Monster/FlyingEye/FlyingEye");
             obj.transform.position = new Vector3(5.0f, 0.15f, 0.0f);
         }
 

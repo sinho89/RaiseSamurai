@@ -1,3 +1,4 @@
+using Data;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,6 +14,8 @@ public class DynamicActor : BaseActor
     protected bool _isAttack = false;
     protected bool _isDeath = false;
 
+    protected bool _isSplash = false;
+
     public float MoveSpeed { get; protected set; } = 1.0f;
     public int MaxHp { get; protected set; } = 100;
     public int Hp { get; protected set; } = 100;
@@ -21,7 +24,6 @@ public class DynamicActor : BaseActor
     public int Attack { get; protected set; } = 10;
     public float AttackSpeed { get; protected set; } = 1.0f;
     public int Level { get; protected set; } = 1;
-
     public int MaxExp { get; protected set; } = 100;
     public int Lucky { get; protected set; } = 5;
     public int Exp
@@ -42,18 +44,34 @@ public class DynamicActor : BaseActor
 
             if (level != Level)
             {
-                Debug.Log("Level Up!");
-                Managers.Actor.Spawn(Defines.Actors.Effect, "Effect/LevelUp/LevelUpEffect", transform);
+                Managers.UI.MakeWorldUI<LevelUpEffect>(this.gameObject.transform, "LevelUpEffect");
                 Level = level;
                 Hp = MaxHp;
-                Attack += 10;
-                AttackSpeed += 0.1f;
             }
         }
     }
 
     protected int _exp = 0;
 
+    public bool GetSplash()
+    {
+        return _isSplash;
+    }
+
+    public void SkillSetInfo(Skills skill)
+    {
+        MaxHp += skill.MaxHp;
+        Attack += skill.Attack;
+        AttackSpeed += skill.AttackSpeed * 0.01f;
+        Lucky += skill.Lucky;
+
+        if (skill.Splash > 0 || _isSplash == true)
+            _isSplash = true;
+        else
+            _isSplash = false;
+
+        Managers.Actor.SetChoiceCount(Lucky);
+    }
 
     public virtual void OnEnable()
     {

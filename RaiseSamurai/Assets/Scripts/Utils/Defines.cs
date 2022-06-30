@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Defines
 {
+    public const int SKILL_DATA_FRONT_COUNT = 1000;
+    public const int SKILL_DATA_MAX_COUNT = 1012;
     public enum Scenes
     {
         Unknown,
@@ -14,6 +16,7 @@ public class Defines
     public enum Actors
     {
         Unknown,
+        BackGround,
         Player,
         Monster,
         Effect,
@@ -35,6 +38,16 @@ public class Defines
         UIs,
         Effects,
         Systems,
+    }
+
+    public enum SkillTypes
+    {
+        Normal,
+        Fire,
+        Water,
+        Wind,
+        Thunder,
+        Poison
     }
 
     public enum ComponentType

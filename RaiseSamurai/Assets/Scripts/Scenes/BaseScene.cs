@@ -32,7 +32,7 @@ public abstract class BaseScene : MonoBehaviour
         Managers.Scene._screenFaderImg.raycastTarget = false;
         Managers.Scene._screenFaderImg.color = new Color(0, 0, 0, 1);
 
-        StartCoroutine(SceneForFadeIn());
+        StartCoroutine(CoSceneForFadeIn());
     }
 
     protected virtual void Update()
@@ -45,12 +45,12 @@ public abstract class BaseScene : MonoBehaviour
                 return;
             }
 
-            StartCoroutine(SceneForFadeOut(Managers.Scene._MovingScene));
+            StartCoroutine(CoSceneForFadeOut(Managers.Scene._MovingScene));
             Managers.Scene._isSceneChange = false;
         }
     }
 
-    private IEnumerator SceneForFadeIn() // Scene Open
+    private IEnumerator CoSceneForFadeIn() // Scene Open
     {
         float fadeCount = 1f;
         while (fadeCount > 0.0f)
@@ -62,7 +62,7 @@ public abstract class BaseScene : MonoBehaviour
 
         Managers.Scene._screenFaderImg.raycastTarget = false;
     }
-    private IEnumerator SceneForFadeOut(Defines.Scenes scene) // Scene Close
+    private IEnumerator CoSceneForFadeOut(Defines.Scenes scene) // Scene Close
     {
         Managers.Scene._screenFaderImg.raycastTarget = true;
 

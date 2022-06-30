@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -28,7 +29,7 @@ public class UIManager
         canvas.renderMode = RenderMode.ScreenSpaceOverlay;
         canvas.overrideSorting = true; // 중첩시 parent canvas와 별개로 child sort값을 가질지 여부
         
-        if(sort)
+        if (sort)
         {
             canvas.sortingOrder = _sortValue;
             _sortValue++;
@@ -120,7 +121,23 @@ public class UIManager
         go.transform.localScale = Vector3.one;
         go.transform.localPosition = prefab.transform.position;
 
+        Canvas canvas = go.GetOrAddComponent<Canvas>();
+        canvas.sortingLayerName = "PopUI";
+
         return popup;
+    }
+
+    public T FindPopup<T>() where T : UI_Popup
+    {
+        return _popupStack.Where(x => x.GetType() == typeof(T)).FirstOrDefault() as T;
+    }
+
+    public T PeekPopupUI<T>() where T : UI_Popup
+    {
+        if (_popupStack.Count == 0)
+            return null;
+
+        return _popupStack.Peek() as T;
     }
 
     public void ClosePopupUI(UI_Popup popup)

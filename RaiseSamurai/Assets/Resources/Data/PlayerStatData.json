@@ -1,0 +1,49 @@
+{
+  "skills": [
+    {
+      "Level": "1",
+      "MaxHp": "100",
+      "MaxExp": "100",
+      "Attack": "20",
+      "AttackSpeed": "1",
+      "Lucky": "0",
+      "Splash": "0"
+    },
+    {
+      "Level": "2",
+      "MaxHp": "120",
+      "MaxExp": "120",
+      "Attack": "20",
+      "AttackSpeed": "1",
+      "Lucky": "0",
+      "Splash": "0"
+    },
+    {
+      "Level": "3",
+      "MaxHp": "140",
+      "MaxExp": "140",
+      "Attack": "20",
+      "AttackSpeed": "1",
+      "Lucky": "0",
+      "Splash": "0"
+    },
+    {
+      "Level": "4",
+      "MaxHp": "160",
+      "MaxExp": "160",
+      "Attack": "20",
+      "AttackSpeed": "1",
+      "Lucky": "0",
+      "Splash": "0"
+    },
+    {
+      "Level": "5",
+      "MaxHp": "180",
+      "MaxExp": "180",
+      "Attack": "20",
+      "AttackSpeed": "1",
+      "Lucky": "0",
+      "Splash": "0"
+    }
+  ]
+} 

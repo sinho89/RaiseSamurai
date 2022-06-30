@@ -9,7 +9,16 @@ using UnityEngine.UI;
 public abstract class UI_Base : MonoBehaviour
 {
     protected Dictionary<Type, UnityEngine.Object[]> _objects = new Dictionary<Type, UnityEngine.Object[]>();
-    protected abstract void Init();
+    
+    protected bool _init = false;
+
+    public virtual bool Init()
+    {
+        if (_init)
+            return false;
+
+        return _init = true;
+    }
 
     private void Start()
     {
@@ -40,6 +49,7 @@ public abstract class UI_Base : MonoBehaviour
     protected void BindText(Type type) { Bind<TextMeshProUGUI>(type); }
     protected void BindButton(Type type) { Bind<Button>(type); }
     protected void BindSlider(Type type) { Bind<Slider>(type); }
+    
 
     protected T Get<T>(int idx) where T : UnityEngine.Object
     {

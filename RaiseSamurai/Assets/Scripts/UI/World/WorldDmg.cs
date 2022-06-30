@@ -18,8 +18,11 @@ public class WorldDmg : UI_Base
         DamageText,
     }
 
-    protected override void Init()
+    public override bool Init()
     {
+        if (base.Init() == false)
+            return false;
+
         BindText(typeof(Text));
 
         _parentComponent = transform.parent.GetComponent<DynamicActor>();
@@ -40,10 +43,13 @@ public class WorldDmg : UI_Base
             _popDir = new Vector3(Random.Range(0, 0.5f), Random.Range(0.5f, 1f), 0).normalized;
         }
 
-        StartCoroutine(Active());
+        StartCoroutine(CoActive());
+
+        return true;
+
     }
 
-    private IEnumerator Active()
+    private IEnumerator CoActive()
     {
         float fadeText = 1;
         _dmgFont.text = Damage.ToString();
@@ -59,7 +65,7 @@ public class WorldDmg : UI_Base
         }
 
         Destroy(this.gameObject);
-        StopCoroutine(Active());
+        StopCoroutine(CoActive());
     }
 
     private void Update()

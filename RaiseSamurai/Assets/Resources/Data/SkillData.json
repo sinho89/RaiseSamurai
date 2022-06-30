@@ -1,0 +1,160 @@
+{
+  "skills": [
+    {
+      "SkillId": "1000",
+      "SkillTitle": "괴력 I",
+      "SkillType": "0",
+      "SkillInfo": "공격력 +5",
+      "SkillLevel": "1",
+      "MaxHp": "0",
+      "Attack": "5",
+      "AttackSpeed": "0",
+      "Lucky": "0",
+      "Splash": "0"
+    },
+    {
+      "SkillId": "1001",
+      "SkillTitle": "광분 I",
+      "SkillType": "3",
+      "SkillInfo": "공격속도 +3%",
+      "SkillLevel": "1",
+      "MaxHp": "0",
+      "Attack": "0",
+      "AttackSpeed": "3",
+      "Lucky": "0",
+      "Splash": "0"
+    },
+    {
+      "SkillId": "1002",
+      "SkillTitle": "불굴 I",
+      "SkillType": "1",
+      "SkillInfo": "체력 +10",
+      "SkillLevel": "1",
+      "MaxHp": "10",
+      "Attack": "0",
+      "AttackSpeed": "0",
+      "Lucky": "0",
+      "Splash": "0"
+    },
+    {
+      "SkillId": "1003",
+      "SkillTitle": "행운 I",
+      "SkillType": "4",
+      "SkillInfo": "행운 +1",
+      "SkillLevel": "1",
+      "MaxHp": "0",
+      "Attack": "0",
+      "AttackSpeed": "0",
+      "Lucky": "1",
+      "Splash": "0"
+    },
+    {
+      "SkillId": "1004",
+      "SkillTitle": "괴력 II",
+      "SkillType": "0",
+      "SkillInfo": "공격력 +10",
+      "SkillLevel": "2",
+      "MaxHp": "0",
+      "Attack": "10",
+      "AttackSpeed": "0",
+      "Lucky": "0",
+      "Splash": "0"
+    },
+    {
+      "SkillId": "1005",
+      "SkillTitle": "광분 II",
+      "SkillType": "3",
+      "SkillInfo": "공격속도 +6%",
+      "SkillLevel": "2",
+      "MaxHp": "0",
+      "Attack": "0",
+      "AttackSpeed": "6",
+      "Lucky": "0",
+      "Splash": "0"
+    },
+    {
+      "SkillId": "1006",
+      "SkillTitle": "불굴 II",
+      "SkillType": "1",
+      "SkillInfo": "체력 +20",
+      "SkillLevel": "2",
+      "MaxHp": "20",
+      "Attack": "0",
+      "AttackSpeed": "0",
+      "Lucky": "0",
+      "Splash": "0"
+    },
+    {
+      "SkillId": "1007",
+      "SkillTitle": "행운 II",
+      "SkillType": "4",
+      "SkillInfo": "행운 +2",
+      "SkillLevel": "2",
+      "MaxHp": "0",
+      "Attack": "0",
+      "AttackSpeed": "0",
+      "Lucky": "2",
+      "Splash": "0"
+    },
+    {
+      "SkillId": "1008",
+      "SkillTitle": "괴력 III",
+      "SkillType": "0",
+      "SkillInfo": "공격력 +15",
+      "SkillLevel": "3",
+      "MaxHp": "0",
+      "Attack": "15",
+      "AttackSpeed": "0",
+      "Lucky": "0",
+      "Splash": "0"
+    },
+    {
+      "SkillId": "1009",
+      "SkillTitle": "광분 III",
+      "SkillType": "3",
+      "SkillInfo": "공격속도 +9%",
+      "SkillLevel": "3",
+      "MaxHp": "0",
+      "Attack": "0",
+      "AttackSpeed": "9",
+      "Lucky": "0",
+      "Splash": "0"
+    },
+    {
+      "SkillId": "1010",
+      "SkillTitle": "불굴 III",
+      "SkillType": "1",
+      "SkillInfo": "체력 +30",
+      "SkillLevel": "3",
+      "MaxHp": "30",
+      "Attack": "0",
+      "AttackSpeed": "0",
+      "Lucky": "0",
+      "Splash": "0"
+    },
+    {
+      "SkillId": "1011",
+      "SkillTitle": "행운 III",
+      "SkillType": "4",
+      "SkillInfo": "행운 +3",
+      "SkillLevel": "3",
+      "MaxHp": "0",
+      "Attack": "0",
+      "AttackSpeed": "0",
+      "Lucky": "3",
+      "Splash": "0"
+    },
+    {
+      "SkillId": "1012",
+      "SkillTitle": "티아멧",
+      "SkillType": "1",
+      "SkillInfo": "일반 공격이 스플래시 공격으로 변경 (공격력 -20)",
+      "SkillLevel": "4",
+      "MaxHp": "0",
+      "Attack": "-20",
+      "AttackSpeed": "0",
+      "Lucky": "0",
+      "Splash": "1"
+    }
+  ]
+} 

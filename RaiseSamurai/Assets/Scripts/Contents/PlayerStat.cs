@@ -9,7 +9,7 @@ public class PlayerStat : Stat
     [SerializeField]
 	protected int _gold;
 
-	public int Exp 
+	/*public int Exp 
 	{ 
 		get { return _exp; } 
 		set 
@@ -34,7 +34,7 @@ public class PlayerStat : Stat
 				SetStat(Level);
 			}
 		}
-	}
+	}*/
 
 	public int Gold { get { return _gold; } set { _gold = value; } }
 
@@ -51,11 +51,11 @@ public class PlayerStat : Stat
 
 	public void SetStat(int level)
 	{
-		Dictionary<int, Data.Stat> dict = Managers.Data.StatDict;
+		/*Dictionary<int, Data.Stat> dict = Managers.Data.StatDict;
 		Data.Stat stat = dict[level];
 		_hp = stat.maxHp;
 		_maxHp = stat.maxHp;
-		_attack = stat.attack;
+		_attack = stat.attack;*/
 	}
 
 	protected override void OnDead(Stat attacker)

@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class WorldLevelUp : UI_Base
 {
-    private CircleCollider2D _parentCollider = null;
     private TextMeshProUGUI _levelUpFont = null;
 
     enum Text
@@ -13,19 +12,23 @@ public class WorldLevelUp : UI_Base
         WorldLevelUpText,
     }
 
-    protected override void Init()
+    public override bool Init()
     {
+        if (base.Init() == false)
+            return false;
+
         BindText(typeof(Text));
 
-        _parentCollider = transform.parent.GetComponent<CircleCollider2D>();
         _levelUpFont = GetText((int)Text.WorldLevelUpText);
 
-        transform.position = transform.parent.position + (Vector3.up * _parentCollider.radius * 1.5f);
+        transform.position = transform.position + (Vector3.up * 1f);
 
-        StartCoroutine(Active());
+        StartCoroutine(CoActive());
+
+        return true;
     }
 
-    private IEnumerator Active()
+    private IEnumerator CoActive()
     {
         float fadeText = 1;
 
@@ -39,11 +42,11 @@ public class WorldLevelUp : UI_Base
         }
 
         Destroy(this.gameObject);
-        StopCoroutine(Active());
+        StopCoroutine(CoActive());
     }
 
     private void Update()
     {
-        transform.Translate(Vector3.up * 1f * Time.deltaTime);
+        transform.Translate(Vector3.up * 1.5f * Time.deltaTime);
     }
 }
