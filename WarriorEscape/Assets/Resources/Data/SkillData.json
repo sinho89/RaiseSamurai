@@ -1,0 +1,137 @@
+{ // SkillType (0: Normal 1:Red 2:Blue 3:Green)
+  // SkillLevel (1: 일반 2: 고급 3: 희귀 4: 전설)
+  // SpecialType(0: Default 1: 범위평타/공격력절반감소 2: 공속100%증가/체력절반감소 3: 최대체력2배증가/공격속도절반감소 
+  //             4: 1초에 한번씩 5%회복 (30초) 5: 1초에 한번씩 적 전체 10% 데미지 감소 (30초) )
+  "skills": [
+    {
+      "SkillId": "1000",
+      "SkillTitle": "괴력 [일반]",
+      "SkillType": "0",
+      "SkillInfo": "공격력이 영구적으로 20 증가합니다.",
+      "SkillLevel": "1",
+      "SkillTime": "0",
+      "MaxHp": "0",
+      "Attack": "20",
+      "AttackSpeed": "0",
+      "Lucky": "0",
+      "SpecialType": "0"
+    },
+    {
+      "SkillId": "1001",
+      "SkillTitle": "분노 [일반]",
+      "SkillType": "1",
+      "SkillInfo": "공격속도가 영구적으로 20% 증가합니다.",
+      "SkillLevel": "1",
+      "SkillTime": "0",
+      "MaxHp": "0",
+      "Attack": "0",
+      "AttackSpeed": "20",
+      "Lucky": "0",
+      "SpecialType": "0"
+    },
+    {
+      "SkillId": "1002",
+      "SkillTitle": "불굴 [일반]",
+      "SkillType": "2",
+      "SkillInfo": "최대 체력이 영구적으로 100 증가합니다.",
+      "SkillLevel": "1",
+      "SkillTime": "0",
+      "MaxHp": "100",
+      "Attack": "0",
+      "AttackSpeed": "0",
+      "Lucky": "0",
+      "SpecialType": "0"
+    },
+    {
+      "SkillId": "1003",
+      "SkillTitle": "행운 [일반]",
+      "SkillType": "3",
+      "SkillInfo": "레벨업 시 스킬 선택지가 1개 늘어납니다.",
+      "SkillLevel": "1",
+      "SkillTime": "0",
+      "MaxHp": "0",
+      "Attack": "0",
+      "AttackSpeed": "0",
+      "Lucky": "1",
+      "SpecialType": "0"
+    },
+    {
+      "SkillId": "1004",
+      "SkillTitle": "지진 [전설]",
+      "SkillType": "1",
+      "SkillInfo": "일반 공격이 범위 공격으로 변경되지만 공격력이 절반으로 감소됩니다.",
+      "SkillLevel": "4",
+      "SkillTime": "0",
+      "MaxHp": "0",
+      "Attack": "0",
+      "AttackSpeed": "0",
+      "Lucky": "0",
+      "SpecialType": "1"
+    },
+    {
+      "SkillId": "1005",
+      "SkillTitle": "광분 [전설]",
+      "SkillType": "1",
+      "SkillInfo": "공격속도가 100%증가하지만 최대 체력이 절반으로 감소합니다.",
+      "SkillLevel": "4",
+      "SkillTime": "0",
+      "MaxHp": "0",
+      "Attack": "0",
+      "AttackSpeed": "0",
+      "Lucky": "0",
+      "SpecialType": "2"
+    },
+    {
+      "SkillId": "1006",
+      "SkillTitle": "철벽 [희귀]",
+      "SkillType": "2",
+      "SkillInfo": "최대체력이 2배 증가하지만 공격속도가 절반으로 감소합니다.",
+      "SkillLevel": "3",
+      "SkillTime": "0",
+      "MaxHp": "0",
+      "Attack": "0",
+      "AttackSpeed": "0",
+      "Lucky": "0",
+      "SpecialType": "3"
+    },
+    {
+      "SkillId": "1007",
+      "SkillTitle": "희생 [희귀]",
+      "SkillType": "3",
+      "SkillInfo": "레벨업 시 스킬 선택지가 1개 줄어들지만 공격력이 100 증가합니다.",
+      "SkillLevel": "3",
+      "SkillTime": "0",
+      "MaxHp": "0",
+      "Attack": "100",
+      "AttackSpeed": "0",
+      "Lucky": "-1",
+      "SpecialType": "0"
+    },
+    {
+      "SkillId": "1008",
+      "SkillTitle": "치유 [희귀]",
+      "SkillType": "3",
+      "SkillInfo": "30초간 1초에 최대 체력의 5%를 회복합니다.",
+      "SkillLevel": "3",
+      "SkillTime": "30",
+      "MaxHp": "0",
+      "Attack": "0",
+      "AttackSpeed": "0",
+      "Lucky": "0",
+      "SpecialType": "4"
+    },
+    {
+      "SkillId": "1009",
+      "SkillTitle": "맹독지대 [전설]",
+      "SkillType": "3",
+      "SkillInfo": "30초간 적 전체에게 독을 퍼트립니다 (초당 최대 체력 10% 데미지)",
+      "SkillLevel": "4",
+      "SkillTime": "30",
+      "MaxHp": "0",
+      "Attack": "0",
+      "AttackSpeed": "0",
+      "Lucky": "0",
+      "SpecialType": "5"
+    }
+  ]
+} 
